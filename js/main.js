@@ -1,64 +1,19 @@
 jQuery(document).ready(function ($) {
 
-    /**
-     * function createDynamicMainMenu () creates a dynamic main menu related to the json file
-     * all modifications from this json file will automatically be added to the menu
-     * @param {*} json menu.json
-     * @return {string} html content
-     */
     function createDynamicMainMenu(json) {
 
-        var listMainMenu = `<h1 class="w3-center w3-jumbo" style="margin-bottom:64px">THE MENU</h1>\n`
-        listMainMenu += `<div class="w3-row w3-center w3-border w3-border-dark-grey">\n`
-        listMainMenu += `<div class="w3-row w3-center w3-border w3-border-dark-grey dynaMenu">\n`;
+        var listMainMenu = `<h1 class="w3-center w3-jumbo" style="margin-bottom:64px">THE MENU</h1>`
+        listMainMenu += `<div class="w3-row w3-center w3-border w3-border-dark-grey">`
+        listMainMenu += `<div class="w3-row w3-center w3-border w3-border-dark-grey dynaMenu">`;
 
         for (var [keys] of Object.entries(json)) {
-            listMainMenu += `<a href="#${keys}" class="openMenu">\n`
-            listMainMenu += `<div class="w3-col s4 tablink w3-padding-large w3-hover-red">${keys}</div></a>\n`
+            listMainMenu += `<a href="#${keys}" class="openMenu">`
+            listMainMenu += `<div class="w3-col s4 tablink w3-padding-large w3-hover-red">${keys}</div></a>`
         }
 
-        listMainMenu += `</div></div>\n`;
+        listMainMenu += `</div></div>`;
 
         return listMainMenu;
-    }
-
-    /**
-     * function createDynamicMainMenu () creates a dynamic drop menu related to the json file
-     * all modifications from this json file will automatically be added to the menu
-     * the content showed depends on the content from the main menu that has been selected
-     * @param {data} json menu.json
-     * @param {string} text content from the main menu that has been selected
-     * @return {string} html content
-     */
-    function createDynamicDropMenu(json, text) {
-
-        /*
-        //as the text previously clicked by the user
-        //refers directly to the var 'keys' from function createDynamicMainMenu()
-        //we know for sure that it will always be refering to our json file.
-        //Therefore, we can use our var 'text' to get the required array from the same json file
-        //and select all needed contents easily.
-        */
-
-        var listDropMenu = `<div id="${text}" class="w3-container menu w3-padding-32 w3-white">\n\n`;
-
-        for (var i = 0; i < json[text].length; i++) {
-            var eachObject = json[text][i];
-            listDropMenu += `<h1>\n`;
-            listDropMenu += `<b>${eachObject.name}</b>\n`;
-            if (eachObject.details !== "none") {
-                listDropMenu += `<span class="w3-tag w3-${eachObject.detailsColor} w3-round">`;
-                listDropMenu += `${eachObject.details}</span>\n`;
-            }
-            listDropMenu += `<span class="w3-right w3-tag w3-dark-grey w3-round">${eachObject.price}</span>\n`;
-            listDropMenu += `</h1>\n`;
-            listDropMenu += `<p class = "w3-text-grey" >${eachObject.ingredients}</p>\n`;
-            listDropMenu += `<hr>\n\n`;
-        }
-
-        listDropMenu += `</div>\n`;
-
-        return listDropMenu;
     }
 
     var onLoadOfLuigisWebsite = function (json) {
@@ -157,15 +112,40 @@ jQuery(document).ready(function ($) {
 
             //add a red class to the content that was clicked on 
             $(`a[href="${href}"] div`).addClass("w3-red");
-
             //remove the preview red class from contents previously selected
             $(`a:not([href="${href}"]) div`).removeClass("w3-red");
 
-            /*
-            //we call a function createDropMainMenu()
-            //into the .html jQuery's method in order to show a new
-            //drop menu that is adaptable from the owner's interface
-            */
+            function createDynamicDropMenu(json, text) {
+
+                /*
+                //as the text previously clicked by the user
+                //refers directly to the var 'keys' from function createDynamicMainMenu()
+                //we know for sure that it will always be refering to our json file.
+                //Therefore, we can use our var 'text' to get the required array from the same json file
+                //and select all needed contents easily.
+                */
+
+                var listDropMenu = `<div id="${text}" class="w3-container menu w3-padding-32 w3-white">\n\n`;
+                
+                for (var i = 0; i < json[text].length; i++) {
+                    var eachObject = json[text][i];
+                    listDropMenu += `<h1>\n`;
+                    listDropMenu += `<b>${eachObject.name}</b>\n`;
+                    if (eachObject.details !== "none") {
+                        listDropMenu += `<span class="w3-tag w3-${eachObject.detailsColor} w3-round">`;
+                        listDropMenu += `${eachObject.details}</span>\n`;
+                    }
+                    listDropMenu += `<span class="w3-right w3-tag w3-dark-grey w3-round">${eachObject.price}</span>\n`;
+                    listDropMenu += `</h1>\n`;
+                    listDropMenu += `<p class = "w3-text-grey" >${eachObject.ingredients}</p>\n`;
+                    listDropMenu += `<hr>\n\n`;
+                }
+
+                listDropMenu += `</div>\n`;
+                
+                return listDropMenu;
+            }
+
             $("#dropMenu").html(createDynamicDropMenu(json, text));
 
         });
