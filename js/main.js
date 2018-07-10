@@ -137,6 +137,8 @@ jQuery(document).ready(function ($) {
                 }
 
                 listDropMenu += `</div>\n`;
+
+                return listDropMenu;
             }
 
             console.log(createDynamicDropMenu(json, text));
