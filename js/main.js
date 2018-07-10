@@ -200,6 +200,7 @@ jQuery(document).ready(function ($) {
             $("#dropMenu").html(createDynamicDropMenu(json, text));
             }, 1000);
 
+
             $("#dropMenu").html(`<img class="gifPizza" src="./images/pizza.gif" alt="gifPizza"/>`);
         });
 
