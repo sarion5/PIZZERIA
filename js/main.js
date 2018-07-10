@@ -24,7 +24,7 @@ jQuery(document).ready(function ($) {
         return listMainMenu;
     }
 
-        /**
+    /**
      * function createDynamicDropMenu () creates a dynamic drop menu 
      * that can be modified by the owner's interface.
      * all modifications in the json file will be synchronized and
@@ -44,7 +44,7 @@ jQuery(document).ready(function ($) {
         */
 
         var listDropMenu = `<div id="${text}" class="w3-container menu w3-padding-32 w3-white">\n\n`;
-        
+
         for (var i = 0; i < json[text].length; i++) {
             var eachObject = json[text][i];
             listDropMenu += `<h1>\n`;
@@ -60,7 +60,7 @@ jQuery(document).ready(function ($) {
         }
 
         listDropMenu += `</div>\n`;
-        
+
         return listDropMenu;
     }
 
@@ -150,7 +150,7 @@ jQuery(document).ready(function ($) {
         */
         $("#mainMenu").html(createDynamicMainMenu(json));
 
-        //$("#Pizza").show();
+        $("#Pizza").show();
 
         $(".openMenu").click(function (event) {
             event.preventDefault();
@@ -160,11 +160,21 @@ jQuery(document).ready(function ($) {
 
             //add a red class to the content that was clicked on 
             $(`a[href="${href}"] div`).addClass("w3-red");
+
             //remove the preview red class from contents previously selected
             $(`a:not([href="${href}"]) div`).removeClass("w3-red");
-            //
-            $("#dropMenu").html(createDynamicDropMenu(json, text));
 
+            setTimeout(function () {
+            /*
+            //we call a function createDynamicDropMenu()
+            //into the .html jQuery's method in order to re-create a new
+            //main menu that is adaptable from the owner's interface
+            */
+            $("#dropMenu").html(createDynamicDropMenu(json, text));
+            }, 2000);
+
+            
+            $("#dropMenu").html(`<img class="gifPizza" src="./images/pizza.gif" alt="gifPizza"/>`)
         });
     }
 
