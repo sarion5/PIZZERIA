@@ -111,6 +111,10 @@ jQuery(document).ready(function ($) {
             var text = $(this).text();
 
             function createDynamicDropMenu(json, text) {
+
+                $(`a[href="${href}"] div`).addClass("w3-red");
+                $(`a:not([href="${href}"]) div`).removeClass("w3-red");
+
                 /*
                 //as the text previously clicked by the user
                 //refers directly to the var 'keys' from function createDynamicMainMenu()
@@ -118,9 +122,9 @@ jQuery(document).ready(function ($) {
                 //Therefore, we can use our var 'text' to get the required array from the same json file
                 //and select all needed contents easily.
                 */
-                
-                var listDropMenu = `<div id="${text}" class="w3-container menu w3-padding-32 w3-white">\n\n`;
 
+                var listDropMenu = `<div id="${text}" class="w3-container menu w3-padding-32 w3-white">\n\n`;
+                
                 for (var i = 0; i < json[text].length; i++) {
                     var eachObject = json[text][i];
                     listDropMenu += `<h1>\n`;
@@ -136,32 +140,11 @@ jQuery(document).ready(function ($) {
                 }
 
                 listDropMenu += `</div>\n`;
-
+                
                 return listDropMenu;
             }
 
             $("#dropMenu").html(createDynamicDropMenu(json, text));
-            console.log(createDynamicDropMenu(json, text));
-            
-
-            
-            /* if (href === "#Pizza") {
-                $(`a[href="${href}"] div`).addClass("w3-red");
-                $(`a:not([href="${href}"]) div`).removeClass("w3-red");
-                $(`#dropMenu div:not([href="#Pizza"])`).hide();
-                $(href).show();
-            } else if (href === "#Pasta") {
-                $(`a[href="${href}"] div`).addClass("w3-red");
-                $(`a:not([href="${href}"]) div`).removeClass("w3-red");
-                $(`#dropMenu div:not([href="#Pizza"])`).hide();
-                $(href).show();
-            } else if (href === "#Starter") {
-                $(`a[href="${href}"] div`).addClass("w3-red");
-                $(`a:not([href="${href}"]) div`).removeClass("w3-red");
-                $(`#dropMenu div:not([href="#Pizza"])`).hide();
-                $(href).show();
-            } */
-
 
         });
     }
