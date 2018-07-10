@@ -141,7 +141,7 @@ jQuery(document).ready(function ($) {
                 return listDropMenu;
             }
 
-            console.log(createDynamicDropMenu(json, text));
+            $("#dropMenu").html(createDynamicDropMenu(json, text));
 
             //    insert comment
 
