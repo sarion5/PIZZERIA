@@ -1,5 +1,31 @@
 jQuery(document).ready(function ($) {
 
+    function suggestionsAccordingToWeather () {
+        var coldWeather = [];
+        var midWeather = [];
+        var hotWeather = [];
+
+        var weather = Math.floor(Math.random() * 2);
+        
+        switch (weather){
+            case 0:
+            for (let i = 0; i < json.length; i++) {
+                const element = json[i];
+                
+            }
+            break;
+
+            case 1:
+            //cond
+            break;
+
+            case 2:
+            //cond
+            break;
+        }
+
+    }
+
     /**
      * function createDynamicMainMenu () creates a dynamic main menu 
      * that can be modified by the owner's interface.
@@ -149,20 +175,8 @@ jQuery(document).ready(function ($) {
         //main menu that is adaptable from the owner's interface
         */
         $("#mainMenu").html(createDynamicMainMenu(json));
-
-        function suggestionsAccordingToWeather () {
-            var coldWeather = [];
-            var midWeather = [];
-            var hotWeather = [];
-
-            var weather = Math.floor(Math.random() * 2);
-            
-            if (weather > 15){
-
-            }
-
-        }
-        //$("#Pizza").show();
+        
+        
 
         $(".openMenu").click(function (event) {
             event.preventDefault();
