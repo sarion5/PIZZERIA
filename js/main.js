@@ -150,7 +150,7 @@ jQuery(document).ready(function ($) {
         */
         $("#mainMenu").html(createDynamicMainMenu(json));
 
-        //$("#Pizza").show();
+        $("#Pizza").show();
 
         $(".openMenu").click(function (event) {
             event.preventDefault();
