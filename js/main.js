@@ -109,6 +109,8 @@ jQuery(document).ready(function ($) {
 
             var text = $(this).text();
 
+            // test pull request
+
             function createDynamicDropMenu(json, text) {
                 /*
                 //as the text previously clicked by the user
