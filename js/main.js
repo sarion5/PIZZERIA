@@ -165,6 +165,7 @@ jQuery(document).ready(function ($) {
             $(`a:not([href="${href}"]) div`).removeClass("w3-red");
 
             setTimeout(function () {
+                
             /*
             //we call a function createDynamicDropMenu()
             //into the .html jQuery's method in order to re-create a new
@@ -173,7 +174,6 @@ jQuery(document).ready(function ($) {
             $("#dropMenu").html(createDynamicDropMenu(json, text));
             }, 2000);
 
-            
             $("#dropMenu").html(`<img class="gifPizza" src="./images/pizza.gif" alt="gifPizza"/>`)
         });
     }
