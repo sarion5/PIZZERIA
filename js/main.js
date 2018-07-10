@@ -119,24 +119,24 @@ jQuery(document).ready(function ($) {
                 //Therefore, we can use our var 'text' to get the required array from the same json file
                 //and select all needed contents easily.
                 */
-
+                
                 var listDropMenu = `<div id="${text}" class="w3-container menu w3-padding-32 w3-white">\n`;
 
                 for (var i = 0; i < json[text].length; i++) {
                     var eachObject = json[text][i];
-                    listDropMenu += `<h1>\n`;
-                    listDropMenu += `<b>${eachObject.name}/b>\n`;
-                    if (json[text].details !== "none") {
+                    listDropMenu += `<h1>`;
+                    listDropMenu += `<b>${eachObject.name}</b>`;
+                    if (eachObject.details !== "none") {
                         listDropMenu += `<span class="w3-tag w3-${eachObject.detailsColor} w3-round">`;
-                        listDropMenu += `${eachObject.details}}</span>\n`;
+                        listDropMenu += `${eachObject.details}}</span>`;
                     }
-                    listDropMenu += `<span class="w3-right w3-tag w3-dark-grey w3-round">${eachObject.price}</span>\n`;
-                    listDropMenu += `</h1>\n`;
-                    listDropMenu += `<p class = "w3-text-grey" >${eachObject.ingredients}< /p>\n`;
-                    listDropMenu += `<hr>\n`;
+                    listDropMenu += `<span class="w3-right w3-tag w3-dark-grey w3-round">${eachObject.price}</span>`;
+                    listDropMenu += `</h1>`;
+                    listDropMenu += `<p class = "w3-text-grey" >${eachObject.ingredients}</p>`;
+                    listDropMenu += `<hr>`;
                 }
 
-                listDropMenu += `</div>\n`;
+                listDropMenu += `</div>`;
 
                 return listDropMenu;
             }
