@@ -164,17 +164,18 @@ jQuery(document).ready(function ($) {
             //remove the preview red class from contents previously selected
             $(`a:not([href="${href}"]) div`).removeClass("w3-red");
 
-            setTimeout(function () {
+            //setTimeout(function () {
             /*
             //we call a function createDynamicDropMenu()
             //into the .html jQuery's method in order to re-create a new
             //main menu that is adaptable from the owner's interface
             */
             $("#dropMenu").html(createDynamicDropMenu(json, text));
-            }, 2000);
+
+            //}, 2000);
 
             
-            $("#dropMenu").html(`<img class="gifPizza" src="./images/pizza.gif" alt="gifPizza"/>`)
+            //$("#dropMenu").html(`<img class="gifPizza" src="./images/pizza.gif" alt="gifPizza"/>`)
         });
     }
 
