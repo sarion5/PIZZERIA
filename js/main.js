@@ -156,18 +156,74 @@ jQuery(document).ready(function ($) {
             var href = $(this).attr("href");
             var text = $(this).text();
 
+<<<<<<< HEAD
             //add a red class to the content that was clicked on 
             $(`a[href="${href}"] div`).addClass("w3-red");
+=======
+            // test pull request
+
+            function createDynamicDropMenu(json, text) {
+                /*
+                //as the text previously clicked by the user
+                //refers directly to the var 'keys' from function createDynamicMainMenu()
+                //we know for sure that it will always be refering to our json file.
+                //Therefore, we can use our var 'text' to get the required array from the same json file
+                //and select all needed contents easily.
+                */
+                
+                var listDropMenu = `<div id="${text}" class="w3-container menu w3-padding-32 w3-white">\n\n`;
+
+                for (var i = 0; i < json[text].length; i++) {
+                    var eachObject = json[text][i];
+                    listDropMenu += `<h1>\n`;
+                    listDropMenu += `<b>${eachObject.name}</b>\n`;
+                    if (eachObject.details !== "none") {
+                        listDropMenu += `<span class="w3-tag w3-${eachObject.detailsColor} w3-round">`;
+                        listDropMenu += `${eachObject.details}</span>\n`;
+                    }
+                    listDropMenu += `<span class="w3-right w3-tag w3-dark-grey w3-round">${eachObject.price}</span>\n`;
+                    listDropMenu += `</h1>\n`;
+                    listDropMenu += `<p class = "w3-text-grey" >${eachObject.ingredients}</p>\n`;
+                    listDropMenu += `<hr>\n\n`;
+                }
+
+                listDropMenu += `</div>\n`;
+>>>>>>> parent of 1d0cc53... dropMenu fonctionnel
 
             //remove the preview red class from contents previously selected
             $(`a:not([href="${href}"]) div`).removeClass("w3-red");
 
+<<<<<<< HEAD
             /*
             //we call a function createDropMainMenu()
             //into the .html jQuery's method in order to show a new
             //drop menu that is adaptable from the owner's interface
             */
             $("#dropMenu").html(createDynamicDropMenu(json, text));
+=======
+            $(href).html(createDynamicDropMenu(json, text));
+            console.log(createDynamicDropMenu(json, text));
+            
+
+            
+            /* if (href === "#Pizza") {
+                $(`a[href="${href}"] div`).addClass("w3-red");
+                $(`a:not([href="${href}"]) div`).removeClass("w3-red");
+                $(`#dropMenu div:not([href="#Pizza"])`).hide();
+                $(href).show();
+            } else if (href === "#Pasta") {
+                $(`a[href="${href}"] div`).addClass("w3-red");
+                $(`a:not([href="${href}"]) div`).removeClass("w3-red");
+                $(`#dropMenu div:not([href="#Pizza"])`).hide();
+                $(href).show();
+            } else if (href === "#Starter") {
+                $(`a[href="${href}"] div`).addClass("w3-red");
+                $(`a:not([href="${href}"]) div`).removeClass("w3-red");
+                $(`#dropMenu div:not([href="#Pizza"])`).hide();
+                $(href).show();
+            } */
+
+>>>>>>> parent of 1d0cc53... dropMenu fonctionnel
 
         });
     }
