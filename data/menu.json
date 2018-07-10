@@ -1,0 +1,118 @@
+{
+    "Pizzas": [{
+            "name": "Margherita",
+            "details": "none",
+            "detailsColor": "none",
+            "ingredients": "Fresh tomatoes, fresh mozzarella, fresh basil",
+            "price": "$12,5"
+        },
+        {
+            "name": "FORMAGGIO",
+            "details": "none",
+            "detailsColor": "none",
+            "ingredients": "Four cheeses (mozzarella, parmesan, pecorino, jarlsberg)",
+            "price": "$15,5"
+        },
+        {
+            "name": "CHICKEN",
+            "details": "none",
+            "detailsColor": "none",
+            "ingredients": "Fresh tomatoes, mozzarella, chicken, onions",
+            "price": "$17"
+        },
+        {
+            "name": "MEAT TOWN",
+            "details": "HOT!",
+            "detailsColor": "red",
+            "ingredients": "Fresh tomatoes, mozzarella, hot pepperoni, hot sausage, beef, chicken",
+            "price": "$20"
+        },
+        {
+            "name": "PARMA",
+            "details": "NEW",
+            "detailsColor": "grey",
+            "ingredients": "Fresh tomatoes, fresh mozzarella, parma, bacon, fresh arugula",
+            "price": "$21,5"
+        }
+    ],
+    "Salads": [{
+            "name": "LASAGNA",
+            "details": "POPULAR",
+            "detailsColor": "grey",
+            "ingredients": "Special sauce, mozzarella, parmesan, ground beef",
+            "price": "$13.50"
+        },
+        {
+            "name": "RAVIOLI",
+            "details": "none",
+            "detailsColor": "none",
+            "ingredients": "Raviolis filled with cheese",
+            "price": "$14,5"
+        },
+        {
+            "name": "SPAGHETTIS CLASSICA",
+            "details": "none",
+            "detailsColor": "none",
+            "ingredients": "Fresh tomatoes, onions, ground beef",
+            "price": "$11"
+        },
+        {
+            "name": "SEA FOOD PASTA",
+            "details": "none",
+            "detailsColor": "none",
+            "ingredients": "Salmon, shrimp, lobster, garlic",
+            "price": "$25.5"
+        }
+    ],
+    "Starters": [{
+            "name": "TODAY'S SOUP",
+            "details": "SEASONAL",
+            "detailsColor": "grey",
+            "ingredients": "Ask the waiter",
+            "price": "$5.50"
+        },
+        {
+            "name": "BRUSCHETTA",
+            "details": "none",
+            "detailsColor": "none",
+            "ingredients": "Bread with perso, tomatoes, onions, garlic",
+            "price": "$8,5"
+        },
+        {
+            "name": "GARLIC BREAD",
+            "details": "none",
+            "detailsColor": "none",
+            "ingredients": "Grilled ciabata, onions, garlic butter",
+            "price": "$9.5"
+        },
+        {
+            "name": "TOMOZZARELLA",
+            "details": "none",
+            "detailsColor": "none",
+            "ingredients": "Tomatoes, mozzarella",
+            "price": "$20.5"
+        }
+    ],
+    "Desserts": [{
+            "name": "WHITE LADY",
+            "details": "POPULAR",
+            "detailsColor": "grey",
+            "ingredients": "Balls of vanilla, balls of chocolate",
+            "price": "$8.50"
+        },
+        {
+            "name": "FRENCH CREPES",
+            "details": "none",
+            "detailsColor": "none",
+            "ingredients": "Eggs, vanilla, hot chocolate, gluten",
+            "price": "$7.5"
+        },
+        {
+            "name": "TIRAMISU",
+            "details": "none",
+            "detailsColor": "none",
+            "ingredients": "Coffee, Alcohol, Speculoos",
+            "price": "$9.5"
+        }
+    ]
+}
