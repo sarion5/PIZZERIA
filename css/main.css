@@ -16,3 +16,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
     background-color: #CCC;
     color: #000;
 }
+
+.gifPizza {
+    width: 330px;
+    height: auto;
+    box-align: center;
+    margin-left:320px;
+    margin-top:100px;
+}
