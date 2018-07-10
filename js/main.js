@@ -160,8 +160,18 @@ jQuery(document).ready(function ($) {
 
             //add a red class to the content that was clicked on 
             $(`a[href="${href}"] div`).addClass("w3-red");
+
             //remove the preview red class from contents previously selected
             $(`a:not([href="${href}"]) div`).removeClass("w3-red");
+
+            function download() {
+                setTimeout(function(){
+                    
+
+
+                }, 3000);
+            }
+
             /*
             //we call a function createDynamicDropMenu()
             //into the .html jQuery's method in order to re-create a new
