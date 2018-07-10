@@ -4,35 +4,40 @@
             "details": "none",
             "detailsColor": "none",
             "ingredients": "Fresh tomatoes, fresh mozzarella, fresh basil",
-            "price": "$12,5"
+            "price": "$12,5",
+            "suggestWeather": 2
         },
         {
             "name": "Formaggio",
             "details": "none",
             "detailsColor": "none",
             "ingredients": "Four cheeses (mozzarella, parmesan, pecorino, jarlsberg)",
-            "price": "$15,5"
+            "price": "$15,5",
+            "suggestWeather": 2
         },
         {
             "name": "Chicken",
             "details": "none",
             "detailsColor": "none",
             "ingredients": "Fresh tomatoes, mozzarella, chicken, onions",
-            "price": "$17"
+            "price": "$17",
+            "suggestWeather": 1
         },
         {
             "name": "Meat Town",
             "details": "HOT!",
             "detailsColor": "red",
             "ingredients": "Fresh tomatoes, mozzarella, hot pepperoni, hot sausage, beef, chicken",
-            "price": "$20"
+            "price": "$20",
+            "suggestWeather": 0
         },
         {
             "name": "Parma",
             "details": "NEW",
             "detailsColor": "grey",
             "ingredients": "Fresh tomatoes, fresh mozzarella, parma, bacon, fresh arugula",
-            "price": "$21,5"
+            "price": "$21,5",
+            "suggestWeather": 0
         }
     ],
     "Salads": [{
@@ -40,28 +45,32 @@
             "details": "POPULAR",
             "detailsColor": "grey",
             "ingredients": "Special sauce, mozzarella, parmesan, ground beef",
-            "price": "$13.50"
+            "price": "$13.50",
+            "suggestWeather": 1
         },
         {
             "name": "Ravioli",
             "details": "none",
             "detailsColor": "none",
             "ingredients": "Raviolis filled with cheese",
-            "price": "$14,5"
+            "price": "$14,5",
+            "suggestWeather": 1
         },
         {
             "name": "Spaghettis Classica",
             "details": "none",
             "detailsColor": "none",
             "ingredients": "Fresh tomatoes, onions, ground beef",
-            "price": "$11"
+            "price": "$11",
+            "suggestWeather": 2
         },
         {
             "name": "Sea Food Pasta",
             "details": "none",
             "detailsColor": "none",
             "ingredients": "Salmon, shrimp, lobster, garlic",
-            "price": "$25.5"
+            "price": "$25.5",
+            "suggestWeather": 1
         }
     ],
     "Starters": [{
@@ -69,28 +78,32 @@
             "details": "SEASONAL",
             "detailsColor": "grey",
             "ingredients": "Ask the waiter",
-            "price": "$5.50"
+            "price": "$5.50",
+            "suggestWeather": 0
         },
         {
             "name": "Bruschetta",
             "details": "none",
             "detailsColor": "none",
             "ingredients": "Bread with perso, tomatoes, onions, garlic",
-            "price": "$8,5"
+            "price": "$8,5",
+            "suggestWeather": 1
         },
         {
             "name": "Garlic Bread",
             "details": "none",
             "detailsColor": "none",
             "ingredients": "Grilled ciabata, onions, garlic butter",
-            "price": "$9.5"
+            "price": "$9.5",
+            "suggestWeather": 1
         },
         {
             "name": "Tomozzarella",
             "details": "none",
             "detailsColor": "none",
             "ingredients": "Tomatoes, mozzarella",
-            "price": "$20.5"
+            "price": "$20.5",
+            "suggestWeather": 2
         }
     ],
     "Desserts": [{
@@ -98,21 +111,24 @@
             "details": "POPULAR",
             "detailsColor": "grey",
             "ingredients": "Balls of vanilla, balls of chocolate",
-            "price": "$8.50"
+            "price": "$8.50",
+            "suggestWeather": 2
         },
         {
             "name": "French Crepe",
             "details": "none",
             "detailsColor": "none",
             "ingredients": "Eggs, vanilla, hot chocolate, gluten",
-            "price": "$7.5"
+            "price": "$7.5",
+            "suggestWeather": 0
         },
         {
             "name": "Tiramisu",
             "details": "none",
             "detailsColor": "none",
             "ingredients": "Coffee, Alcohol, Speculoos",
-            "price": "$9.5"
+            "price": "$9.5",
+            "suggestWeather": 1
         }
     ]
 }
