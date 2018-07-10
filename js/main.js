@@ -1,5 +1,13 @@
 jQuery(document).ready(function ($) {
 
+    /**
+     * function createDynamicMainMenu () creates a dynamic main menu 
+     * that can be modified by the owner's interface.
+     * all modifications in the json file will be synchronized and
+     * will appear in the selected area
+     * @param {data} json menu.json
+     * @return {string} html content
+     */
     function createDynamicMainMenu(json) {
 
         var listMainMenu = `<h1 class="w3-center w3-jumbo" style="margin-bottom:64px">THE MENU</h1>`
@@ -14,6 +22,46 @@ jQuery(document).ready(function ($) {
         listMainMenu += `</div></div>`;
 
         return listMainMenu;
+    }
+
+        /**
+     * function createDynamicDropMenu () creates a dynamic drop menu 
+     * that can be modified by the owner's interface.
+     * all modifications in the json file will be synchronized and
+     * will appear in the selected area
+     * @param {data} json menu.json
+     * @param {string} text text content from the selected area
+     * @return {string} html content
+     */
+    function createDynamicDropMenu(json, text) {
+
+        /*
+        //as the text previously clicked by the user
+        //refers directly to the var 'keys' from function createDynamicMainMenu()
+        //we know for sure that it will always be refering to our json file.
+        //Therefore, we can use our var 'text' to get the required array from the same json file
+        //and select all needed contents easily.
+        */
+
+        var listDropMenu = `<div id="${text}" class="w3-container menu w3-padding-32 w3-white">\n\n`;
+        
+        for (var i = 0; i < json[text].length; i++) {
+            var eachObject = json[text][i];
+            listDropMenu += `<h1>\n`;
+            listDropMenu += `<b>${eachObject.name}</b>\n`;
+            if (eachObject.details !== "none") {
+                listDropMenu += `<span class="w3-tag w3-${eachObject.detailsColor} w3-round">`;
+                listDropMenu += `${eachObject.details}</span>\n`;
+            }
+            listDropMenu += `<span class="w3-right w3-tag w3-dark-grey w3-round">${eachObject.price}</span>\n`;
+            listDropMenu += `</h1>\n`;
+            listDropMenu += `<p class = "w3-text-grey" >${eachObject.ingredients}</p>\n`;
+            listDropMenu += `<hr>\n\n`;
+        }
+
+        listDropMenu += `</div>\n`;
+        
+        return listDropMenu;
     }
 
     var onLoadOfLuigisWebsite = function (json) {
@@ -114,38 +162,7 @@ jQuery(document).ready(function ($) {
             $(`a[href="${href}"] div`).addClass("w3-red");
             //remove the preview red class from contents previously selected
             $(`a:not([href="${href}"]) div`).removeClass("w3-red");
-
-            function createDynamicDropMenu(json, text) {
-
-                /*
-                //as the text previously clicked by the user
-                //refers directly to the var 'keys' from function createDynamicMainMenu()
-                //we know for sure that it will always be refering to our json file.
-                //Therefore, we can use our var 'text' to get the required array from the same json file
-                //and select all needed contents easily.
-                */
-
-                var listDropMenu = `<div id="${text}" class="w3-container menu w3-padding-32 w3-white">\n\n`;
-                
-                for (var i = 0; i < json[text].length; i++) {
-                    var eachObject = json[text][i];
-                    listDropMenu += `<h1>\n`;
-                    listDropMenu += `<b>${eachObject.name}</b>\n`;
-                    if (eachObject.details !== "none") {
-                        listDropMenu += `<span class="w3-tag w3-${eachObject.detailsColor} w3-round">`;
-                        listDropMenu += `${eachObject.details}</span>\n`;
-                    }
-                    listDropMenu += `<span class="w3-right w3-tag w3-dark-grey w3-round">${eachObject.price}</span>\n`;
-                    listDropMenu += `</h1>\n`;
-                    listDropMenu += `<p class = "w3-text-grey" >${eachObject.ingredients}</p>\n`;
-                    listDropMenu += `<hr>\n\n`;
-                }
-
-                listDropMenu += `</div>\n`;
-                
-                return listDropMenu;
-            }
-
+            //
             $("#dropMenu").html(createDynamicDropMenu(json, text));
 
         });
