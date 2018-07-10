@@ -171,6 +171,7 @@ jQuery(document).ready(function ($) {
             //main menu that is adaptable from the owner's interface
             */
             $("#dropMenu").html(createDynamicDropMenu(json, text));
+
             }, 2000);
 
             
