@@ -120,7 +120,7 @@ jQuery(document).ready(function ($) {
                 //and select all needed contents easily.
                 */
                 
-                var listDropMenu = `<div id="${text}" class="w3-container menu w3-padding-32 w3-white">\n`;
+                var listDropMenu = `<div id="${text}" class="w3-container menu w3-padding-32 w3-white">`;
 
                 for (var i = 0; i < json[text].length; i++) {
                     var eachObject = json[text][i];
