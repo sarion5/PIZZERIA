@@ -110,10 +110,12 @@ jQuery(document).ready(function ($) {
             var href = $(this).attr("href");
             var text = $(this).text();
 
-            function createDynamicDropMenu(json, text) {
+            //add a red class to the content that was clicked on 
+            $(`a[href="${href}"] div`).addClass("w3-red");
+            //remove the preview red class from contents previously selected
+            $(`a:not([href="${href}"]) div`).removeClass("w3-red");
 
-                $(`a[href="${href}"] div`).addClass("w3-red");
-                $(`a:not([href="${href}"]) div`).removeClass("w3-red");
+            function createDynamicDropMenu(json, text) {
 
                 /*
                 //as the text previously clicked by the user
