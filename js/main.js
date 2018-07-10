@@ -150,7 +150,18 @@ jQuery(document).ready(function ($) {
         */
         $("#mainMenu").html(createDynamicMainMenu(json));
 
-        $("#suggest").html("lalala");
+        function suggestionsAccordingToWeather () {
+            var coldWeather = [];
+            var midWeather = [];
+            var hotWeather = [];
+
+            var weather = Math.floor(Math.random() * 2);
+            
+            if (weather > 15){
+
+            }
+
+        }
         //$("#Pizza").show();
 
         $(".openMenu").click(function (event) {
@@ -173,7 +184,7 @@ jQuery(document).ready(function ($) {
             //main menu that is adaptable from the owner's interface
             */
             $("#dropMenu").html(createDynamicDropMenu(json, text));
-            }, 2000);
+            }, 1000);
 
             $("#dropMenu").html(`<img class="gifPizza" src="./images/pizza.gif" alt="gifPizza"/>`);
         });
