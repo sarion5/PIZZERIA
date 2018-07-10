@@ -150,7 +150,7 @@ jQuery(document).ready(function ($) {
         */
         $("#mainMenu").html(createDynamicMainMenu(json));
 
-        //$("#Pizza").show();
+        $("#Pizza").show();
 
         $(".openMenu").click(function (event) {
             event.preventDefault();
@@ -174,7 +174,7 @@ jQuery(document).ready(function ($) {
             $("#dropMenu").html(createDynamicDropMenu(json, text));
             }, 2000);
 
-            $("#dropMenu").html(`<img class="gifPizza" src="./images/pizza.gif" alt="gifPizza"/>`)
+            $("#dropMenu").html(`<img class="gifPizza" src="./images/pizza.gif" alt="gifPizza"/>`);
         });
 
         
