@@ -167,10 +167,11 @@ jQuery(document).ready(function ($) {
             function download() {
                 setTimeout(function(){
                     
-
+                $("#dropMenu").html(`<img href="./images/pizza.gif" alt="gifPizza" />`)
 
                 }, 3000);
             }
+            
 
             /*
             //we call a function createDynamicDropMenu()
@@ -179,6 +180,7 @@ jQuery(document).ready(function ($) {
             */
             $("#dropMenu").html(createDynamicDropMenu(json, text));
 
+            download();
         });
     }
 
