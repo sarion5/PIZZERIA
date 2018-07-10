@@ -110,8 +110,6 @@ jQuery(document).ready(function ($) {
             var href = $(this).attr("href");
             var text = $(this).text();
 
-            // test pull request
-
             function createDynamicDropMenu(json, text) {
                 /*
                 //as the text previously clicked by the user
@@ -142,7 +140,7 @@ jQuery(document).ready(function ($) {
                 return listDropMenu;
             }
 
-            $(href).html(createDynamicDropMenu(json, text));
+            $("#dropMenu").html(createDynamicDropMenu(json, text));
             console.log(createDynamicDropMenu(json, text));
             
 
