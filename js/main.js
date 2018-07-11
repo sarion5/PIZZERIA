@@ -50,6 +50,20 @@ jQuery(document).ready(function ($) {
         return listMainMenu;
     }
 
+    function incorporatePizzasMenu (json){
+        var listDropMenu = `<div id="${json[Pizzas].name}" class="w3-container menu w3-padding-32 w3-white">\n\n`;
+
+            listDropMenu += `<h1>\n`;
+            listDropMenu += `<b>${json[Pizzas].name}</b>\n`;
+            listDropMenu += `<span class="w3-right w3-tag w3-dark-grey w3-round">${json[Pizzas].price}</span>\n`;
+            listDropMenu += `</h1>\n`;
+            listDropMenu += `<p class = "w3-text-grey" >${json[Pizzas].ingredients}</p>\n`;
+            listDropMenu += `<hr>\n\n`;
+        }
+
+        listDropMenu += `</div>\n`;
+    }
+
     /**
      * function createDynamicDropMenu () creates a dynamic drop menu 
      * that can be modified by the owner's interface.
@@ -176,7 +190,7 @@ jQuery(document).ready(function ($) {
         */
         $("#mainMenu").html(createDynamicMainMenu(json));
         
-        
+        console.log(incorporatePizzasMenu(json));
 
         $(".openMenu").click(function (event) {
             event.preventDefault();
