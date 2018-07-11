@@ -58,9 +58,9 @@ jQuery(document).ready(function ($) {
      * @param {data} json menu.json
      */
     function incorporatePizzasMenu(json) {
-        var listPizzasMenu = `<div id="${json[0]}" class="w3-container menu w3-padding-32 w3-white">\n\n`;
+        var listPizzasMenu = `<div id="Pizzas" class="w3-container menu w3-padding-32 w3-white">\n\n`;
 
-        for (i = 0; i < json.length; i++) {
+        for (i = 0; i < json.Pizzas.length; i++) {
             var pizzasOnly = json.Pizzas[i];
 
             listPizzasMenu += `<h1>\n`;
@@ -202,7 +202,7 @@ jQuery(document).ready(function ($) {
         */
         $("#mainMenu").html(createDynamicMainMenu(json));
 
-        //$("#dropMenu").html(incorporatePizzasMenu(json));
+        $("#dropMenu").html(incorporatePizzasMenu(json));
         console.log(incorporatePizzasMenu(json));
 
         $(".openMenu").click(function (event) {
