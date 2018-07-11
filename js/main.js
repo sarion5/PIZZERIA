@@ -56,6 +56,7 @@ jQuery(document).ready(function ($) {
      * all modifications in the json file will be synchronized and
      * will appear in the selected area
      * @param {data} json menu.json
+     * @return {string} html content
      */
     function incorporatePizzasMenu(json) {
         var listPizzasMenu = `<div id="Pizzas" class="w3-container menu w3-padding-32 w3-white">\n\n`;
@@ -65,6 +66,10 @@ jQuery(document).ready(function ($) {
 
             listPizzasMenu += `<h1>\n`;
             listPizzasMenu += `<b>${pizzasOnly.name}</b>\n`;
+            if (listPizzasMenu.details !== "none") {
+                listPizzasMenu += `<span class="w3-tag w3-${pizzasOnly.detailsColor} w3-round">`;
+                listPizzasMenu += `${pizzasOnly.details}</span>\n`;
+            }
             listPizzasMenu += `<span class="w3-right w3-tag w3-dark-grey w3-round">${pizzasOnly.price}</span>\n`;
             listPizzasMenu += `</h1>\n`;
             listPizzasMenu += `<p class = "w3-text-grey" >${pizzasOnly.ingredients}</p>\n`;
