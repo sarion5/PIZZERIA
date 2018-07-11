@@ -1,27 +1,27 @@
 jQuery(document).ready(function ($) {
 
-    function suggestionsAccordingToWeather () {
+    function suggestionsAccordingToWeather() {
         var coldWeather = [];
         var midWeather = [];
         var hotWeather = [];
 
         var weather = Math.floor(Math.random() * 2);
-        
-        switch (weather){
+
+        switch (weather) {
             case 0:
-            for (let i = 0; i < json.length; i++) {
-                const element = json[i];
-                
-            }
-            break;
+                for (let i = 0; i < json.length; i++) {
+                    const element = json[i];
+
+                }
+                break;
 
             case 1:
-            //cond
-            break;
+                //cond
+                break;
 
             case 2:
-            //cond
-            break;
+                //cond
+                break;
         }
 
     }
@@ -50,18 +50,30 @@ jQuery(document).ready(function ($) {
         return listMainMenu;
     }
 
-    function incorporatePizzasMenu (json){
-        var listDropMenu = `<div id="${json[Pizzas].name}" class="w3-container menu w3-padding-32 w3-white">\n\n`;
+    /**
+     * function incorporatePizzasMenu () creates a static drop menu 
+     * that can be modified by the owner's interface but will be stuck at the 'Pizzas' element of the json file.
+     * all modifications in the json file will be synchronized and
+     * will appear in the selected area
+     * @param {data} json menu.json
+     */
+    function incorporatePizzasMenu(json) {
+        var listPizzasMenu = `<div id="${json[0]}" class="w3-container menu w3-padding-32 w3-white">\n\n`;
 
-            listDropMenu += `<h1>\n`;
-            listDropMenu += `<b>${json[Pizzas].name}</b>\n`;
-            listDropMenu += `<span class="w3-right w3-tag w3-dark-grey w3-round">${json[Pizzas].price}</span>\n`;
-            listDropMenu += `</h1>\n`;
-            listDropMenu += `<p class = "w3-text-grey" >${json[Pizzas].ingredients}</p>\n`;
-            listDropMenu += `<hr>\n\n`;
+        for (i = 0; i < json.length; i++) {
+            var pizzasOnly = json.Pizzas[i];
+
+            listPizzasMenu += `<h1>\n`;
+            listPizzasMenu += `<b>${pizzasOnly.name}</b>\n`;
+            listPizzasMenu += `<span class="w3-right w3-tag w3-dark-grey w3-round">${pizzasOnly.price}</span>\n`;
+            listPizzasMenu += `</h1>\n`;
+            listPizzasMenu += `<p class = "w3-text-grey" >${pizzasOnly.ingredients}</p>\n`;
+            listPizzasMenu += `<hr>\n\n`;
         }
 
-        listDropMenu += `</div>\n`;
+        listPizzasMenu += `</div>\n`;
+
+        return listPizzasMenu;
     }
 
     /**
@@ -189,7 +201,8 @@ jQuery(document).ready(function ($) {
         //main menu that is adaptable from the owner's interface
         */
         $("#mainMenu").html(createDynamicMainMenu(json));
-        
+
+        //$("#dropMenu").html(incorporatePizzasMenu(json));
         console.log(incorporatePizzasMenu(json));
 
         $(".openMenu").click(function (event) {
@@ -206,19 +219,19 @@ jQuery(document).ready(function ($) {
 
             setTimeout(function () {
 
-            /*
-            //we call a function createDynamicDropMenu()
-            //into the .html jQuery's method in order to re-create a new
-            //main menu that is adaptable from the owner's interface
-            */
-            $("#dropMenu").html(createDynamicDropMenu(json, text));
+                /*
+                //we call a function createDynamicDropMenu()
+                //into the .html jQuery's method in order to re-create a new
+                //main menu that is adaptable from the owner's interface
+                */
+                $("#dropMenu").html(createDynamicDropMenu(json, text));
             }, 1000);
 
 
             $("#dropMenu").html(`<img class="gifPizza" src="./images/pizza.gif" alt="gifPizza"/>`);
         });
 
-        
+
     }
 
     var onLoadingError = function () {
